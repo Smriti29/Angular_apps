@@ -8,7 +8,7 @@ function LunchCheckController($scope) {
 	$scope.LunchCheck= function(lunch) {
 		var result;
 		var inputString=$scope.lunch;
-		$scope.message="lol";
+		$scope.message="Please enter data first";
 		result=inputString.split(",");
 		if(inputString=="" || inputString==null) {
 		$scope.message="Please enter data first";
