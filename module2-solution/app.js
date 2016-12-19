@@ -34,7 +34,7 @@ function ShoppingListCheckOffService() {
   var service = this;
 
   // List of shopping items
-  var items = [ {name: "Cookies", quantity: 2},
+  var items = [{name: "Cookies", quantity: 2},
              {name: "Chips", quantity: 5},
              {name: "Icecream", quantity: 7},
              {name: "Chocolates", quantity: 10},
