@@ -39,7 +39,7 @@ function ShoppingListCheckOffService() {
              {name: "Icecream", quantity: 7},
              {name: "Chocolates", quantity: 10},
              {name: "Sugary drinks", quantity: 6},
-              name: "Pizza", quantity: 2}
+              {name: "Pizza", quantity: 2}
               ];
   var boughtitems = [];
   service.addItem = function (itemIndex) {
