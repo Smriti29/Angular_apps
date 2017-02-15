@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+<style>
+#memory-block{
+    width:100%;
+    height:100%;
+   
+    overflow:hidden;
+    padding:10px;
+}
+#memory-block li{
+    width:140px;
+    height:90px;
+    border:4px solid #fff;
+    border-radius:4px;
+    margin:0 15px 15px 0;
+    float:left;
+    display:block;
+    background-color:#fff;
+    transition: all 0.3s;
+}
+#memory-block li:nth-child(4n+1){clear:left;}
+#memory-block li .image{
+    display:block;
+    width:100%;
+    height:100%;
+    border-radius:3px;
+    background-color:#dbab3c;
+    cursor:pointer;
+    overflow:hidden;
+    position:relative;
+}
+#memory-block li .image:after{
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    z-index:100;
+    content:'';
+    background-color:#dbab3c;
+    transition:left 0.3s;
+}
+#memory-block li.check .image:after,
+#memory-block li.correct .image:after{left:-100%;}
+#memory-block li.check{border-color:brown ;}
+#memory-block li.correct {border-color:#a73828;background-color:#a73828;}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(function(){
+    var newBlock = $('#memory-block'),
+        activeBlocks = [];
+        var x=0;
+        document.getElementById("scorekeeper").innerHTML = "Your Score is: "+x;
+    function checkActiveBlocks(){
+        var valid = (activeBlocks[0].data('cardId') == activeBlocks[1].data('cardId'))
+        if (valid){
+            setTimeout(function(){cleanActiveBlocks(true)}, 400);
+            x=x+10;
+            document.getElementById("scorekeeper").innerHTML = "Your Score is: "+x;
+            
+          } else {
+            setTimeout(cleanActiveBlocks, 800);
+        }
+    }
+    
+    function cleanActiveBlocks(toggleCorrect){
+        var classes = 'check' + (toggleCorrect?' correct': '');
+        
+        activeBlocks[0].toggleClass(classes);
+        activeBlocks[1].toggleClass(classes);
+        
+        activeBlocks.length = 0;
+    }
+    
+    newBlock.on('click', 'li.block', function(e){
+        var self = $(this);
+        
+        if(activeBlocks.length == 2 || self.is('.check') || self.is('.correct'))
+
+ return;
+        
+        activeBlocks.push(self.addClass('check'));
+        if (activeBlocks.length === 2) checkActiveBlocks();
+       
+    });
+});
+</script>
+</head>
+<body>
+<ul id="memory-block">
+    <li class="block" data-card-id="1"><span class="image" style="background-color:red"></span></li>
+    <li class="block" data-card-id="3"><span class="image"style="background-color:green"></span></li>
+    <li class="block" data-card-id="5"><span class="image" style="background-color:black"></span></li>
+    <li class="block" data-card-id="8"><span class="image" style="background-color:lightblue"></span></li>    
+    <li class="block" data-card-id="6"><span class="image" style="background-color:pink"></span></li>
+    <li class="block" data-card-id="7"><span class="image" style="background-color:lightgreen"></span></li>
+    <li class="block" data-card-id="8"><span class="image" style="background-color:lightblue"></span></li>
+    <li class="block" data-card-id="1"><span class="image" style="background-color:red"></span></li>
+    <li class="block" data-card-id="2"><span class="image" style="background-color:blue"></span></li>
+    <li class="block" data-card-id="2"><span class="image" style="background-color:blue"></span></li>    
+    <li class="block" data-card-id="3"><span class="image"style="background-color:green"></span></li>
+    <li class="block" data-card-id="4"><span class="image" style="background-color:yellow"></span></li>
+    <li class="block" data-card-id="5"><span class="image" style="background-color:black"></span></li>
+    <li class="block" data-card-id="4"><span class="image" style="background-color:yellow"></span></li>    
+    <li class="block" data-card-id="6"><span class="image" style="background-color:pink"></span></li>
+    <li class="block" data-card-id="7"><span class="image" style="background-color:lightgreen"></span></li>
+    
+</ul>
+<div><h2 id="scorekeeper"></h2></div>
+</body>
+</html>

@@ -34,13 +34,12 @@ function ShoppingListCheckOffService() {
   var service = this;
 
   // List of shopping items
-  var items = [ {name: "Cookies", quantity: 2},
+  var items = [{name: "Cookies", quantity: 2},
              {name: "Chips", quantity: 5},
              {name: "Icecream", quantity: 7},
              {name: "Chocolates", quantity: 10},
              {name: "Sugary drinks", quantity: 6},
-              {name: "Pizza", quantity: 2}
-              ];
+             {name: "Pizza", quantity: 2}];
   var boughtitems = [];
   service.addItem = function (itemIndex) {
       boughtitems.push(items[itemIndex]);
