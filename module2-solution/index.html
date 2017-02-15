@@ -35,7 +35,7 @@
      <h2>To Buy:</h2>
       <ul>
         <li ng-repeat="item in showList.items">
-          {{ item.quantity }} of {{ item.name }}
+          Buy {{ item.quantity }} {{ item.name }}
           <button class="btn btn-default" ng-click="showList.buyItem($index);"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
         </li>
       </ul>
@@ -47,7 +47,7 @@
      <h2>Already Bought:</h2>
      <ul>
         <li ng-repeat="item in ToBuy.boughtitems">
-          {{ item.quantity }} of {{ item.name }}
+          Bought {{ item.quantity }} {{ item.name }}
         </li>
      </ul>
      <div class="emptyMessage" ng-if="ToBuy.boughtitems.length==0">Nothing bought yet.</div>
