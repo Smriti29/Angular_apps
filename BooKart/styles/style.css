@@ -1,0 +1,143 @@
+body {
+	align-content: center;
+	background-color: #337ab7;
+}
+.navbar-brand {
+	padding:20px;
+}
+#navbar-header {
+	position: relative;
+	border-radius: 0;
+}
+#header-content {
+	margin-left: 20px;
+}
+#logo-img {
+	width: 100px;
+	height: 100px;
+	background: url('../images/book_logo.jpg') no-repeat; 
+	margin: 10px;
+}
+.navbar-brand h1 {
+	color: #337ab7;
+	font-size: 2.5em;
+	font-family: Arial;
+	text-shadow: 1px 1px 1px #fff;
+}
+.navbar-brand a {
+	text-decoration: none;
+}
+#menu {
+	margin-left: 60px;
+	margin-top: 40px;
+	padding: 5px;
+}
+#menu a {
+	font-size: 1.2em;
+	font-family: arial;
+}
+#searchbox {
+	position: absolute;
+	bottom: 10px;
+	right: 250px;
+	display: inline;
+}	
+#cart {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin-right: 50px;
+	margin-bottom: 30px; 
+	float: right;
+}
+#nav-list {
+	margin-top: 10px;
+}
+#nav-list a {
+	color: #fff;
+	text-align: center;
+}
+#nav-list a:hover {
+	background: #337ab7;
+}
+#book {
+	width: 100%;
+    border: 2px solid #000;
+}
+#bookinfo {
+    margin-left: 150px;
+    padding-left: 20px;
+}
+#booklist {
+	position: relative;
+	padding: 5px;
+	border: 2px solid #000;
+	background-color: #fff;
+}
+#add-to-cart {
+	position: absolute;
+	bottom: 0;
+    right: 0;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+#emptyMessage {
+	font-size: 2em;
+	font-family: arial;
+	color: #000;
+	text-align: center;
+	font-weight: bold;
+}
+#badge-id {
+	position: absolute;
+	top: 1px;
+    right: 1px;
+    background-color: red;
+}
+#remove {
+	position: absolute;
+	bottom: 5px;
+	right: 10px;
+}
+#quantity {
+	position: absolute;
+	bottom: 5px;
+	left: 170px;
+    color: #337ab7;
+    font-size: 1.2em;
+    font-family: arial;
+    font-weight: bold;
+}
+.container .well {
+	position: relative;
+	margin-bottom: 5px;
+}
+#cartTotal {
+    position: absolute;
+    right: 10px;
+    top: 3px;
+}
+#cartTotal1 {
+	font-family: arial;
+	font-size: 1.2em;
+}
+#checkout {
+	margin-left: 25px;
+}
+.rating {
+  direction: rtl;
+  display: inline;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+  height: 1.2em;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+}
+
+

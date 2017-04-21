@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="bookart">
+<head>
+   <title>BooKart</title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="styles/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-route.js"></script>
+        <script src="app.js"></script>
+</head>
+<body>
+  <header>
+   <nav id="navbar-header" class="navbar navbar-inverse">
+     <div id="header-content" class="container">
+      <div class="navbar-header">
+        <a href="index.html" class="pull-left visible-md visible-lg">
+         <div id="logo-img" alt="logo-image"></div>
+        </a> 
+        <div class="navbar-brand">
+          <a href="index.html"><h1>BooKart</h1></a>
+        </div>
+        <div id="cart" class="pull-right">
+          <div id="searchbox"><input type="text" id="bookname" placeholder="Search" ng-model="searchKeyword"><a href="index.html"></a>
+          </div>
+        	<ul id="nav-list" class="nav navbar-nav navbar-right" ng-controller="kartctrl">
+              <li><a href="#"><span class="glyphicon glyphicon-user"></span><br>Login / SignUp</a></li>
+              <li><a href="#/books"><span class="glyphicon glyphicon-book"></span><br>Books</a></li>
+              <li><a href="#/kart"><span class="glyphicon glyphicon-shopping-cart"></span><span id="badge-id" class="badge" ng-if="kart.length>0">{{kart.length}}</span><br>Cart</a></li>
+        	</ul>
+        </div>
+      </div>
+     </div>   	
+   </nav>
+  </header> 
+  <div ng-view></div>
+</body>
+</html>

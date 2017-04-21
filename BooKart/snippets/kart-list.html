@@ -1,0 +1,27 @@
+<div id="main-content" class="container">
+     <div class="well">
+       <div id="cartTotal">
+         <span class="glyphicon glyphicon-shopping-cart"></span><span id="cartTotal1"> Cart Total: {{cartTotal | currency:"₹"}}</span>
+         <button id="checkout" class="btn btn-primary" ng-if="cartTotal > 0" ng-click="buy()">Proceed to Checkout</button>
+       </div>
+     </div>       
+  	 <ul class="list-unstyled">
+  		<li class="book" ng-repeat="book in kart track by $index">
+         <div id="booklist">
+  		  <div style="background: url('./images/{{book.bookUrl}}') no-repeat; height: 200px; margin: 10px 10px; position: relative;">
+  		    <div id="bookinfo" class="clear-fix">
+            <h2>{{book.name}}</h2>
+          	<h4>By {{book.author}}</h4>
+          	<span>Rating : {{book.rating}} |  </span> 
+          	<span>{{book.price | currency:"₹"}} |  </span>
+          	<span>{{book.publisher}}</span>
+          	<p>{{book.description}}</p>
+          	</div>
+          	<div id="quantity">Quantity: <input type="number" name="quantity" value="1" ng-model="book.quantity" style="width: 50px;" min="1" max="15"></div>
+          	<button id="remove" class="btn btn-primary" ng-click="remove($index)">Remove</button> 
+          </div>
+         </div>  
+  		</li>
+  	 </ul>
+</div>
+<div id="emptyMessage" ng-if="kart.length==0">Kart is Empty!</div>

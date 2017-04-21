@@ -1,0 +1,20 @@
+<div id="main-content" class="container" ng-controller="bookctrl">
+  	 <ul class="list-unstyled">
+  		<li class="book" ng-repeat="book in books | filter:searchKeyword">
+         <div id="booklist">
+  		  <div style="background: url('./images/{{book.bookUrl}}') no-repeat; height: 200px; margin: 10px 10px;">
+  		    <div id="bookinfo" class="clear-fix">       
+            <h2>{{book.name}}</h2>
+          	<h4>By {{book.author}}</h4>
+          	<span>Rating : {{book.rating}} |  </span>
+          	<span>{{book.price | currency:"₹"}} |  </span>
+          	<span>{{book.publisher}}</span>
+          	<p>{{book.description}}</p>
+          	</div>
+          	<button id="add-to-cart" class="btn btn-primary" ng-click="addToKart(book)">Add to Cart</button> 
+          </div>
+         </div>  
+  		</li>
+  	 </ul>
+  	</div>
+  </div>
